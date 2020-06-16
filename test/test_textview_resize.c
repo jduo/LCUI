@@ -113,7 +113,7 @@ static void test_textview_set_long_content_css(void *arg)
 	Widget_AddClass(self.inline_block, "long-content");
 }
 
-static int check_textview_set_long_content_css(void)
+static void check_textview_set_long_content_css(void)
 {
 	LCUIWidget_Update();
 

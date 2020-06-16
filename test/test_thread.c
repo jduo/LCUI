@@ -63,7 +63,6 @@ static void TestWorker_Destroy(TestWorker worker)
 
 void test_thread(void)
 {
-	int ret = 0;
 	TestWorkerRec worker;
 
 	TestWorker_Init(&worker);

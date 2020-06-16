@@ -16,8 +16,8 @@ int main(void)
 	describe("test string", test_string);
 	describe("test strpool", test_strpool);
 	describe("test object", test_object);
-	desrcibe("test thread", test_thread);
-	describe("teest font_load", test_font_load);
+	describe("test thread", test_thread);
+	describe("test font_load", test_font_load);
 	describe("test image_reader", test_image_reader);
 	describe("test xml_parser", test_xml_parser);
 	describe("test widget_event", test_widget_event);

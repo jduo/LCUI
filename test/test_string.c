@@ -4,6 +4,7 @@
 #include <LCUI_Build.h>
 #include <LCUI/LCUI.h>
 #include "test.h"
+#include "libtest.h"
 
 static void test_cmdsplit(void)
 {

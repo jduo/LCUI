@@ -54,7 +54,7 @@ static void test_wstring_object(void)
 	it_i("Check wstring object concatenation", Object_Compare(&str3, tmp), 0);
 	it_b("Check wstring object append stores result in correct object", Object_Operate(str1, "+=", str2) == str1, TRUE);
 	it_i("Check wstring object append has correct result", Object_Compare(str1, &str3), 0);
-	it_s("Check raw wstring from string object", str1->value.string, L"测试文本");
+	it_b("Check raw wstring from string object", wcscmp(str1->value.wstring, L"测试文本") == 0, TRUE);
 
 	WString_SetValue(&str3, L"1000");
 	str4 = Object_ToString(&str3);

@@ -25,13 +25,13 @@ static void check_widget_loaded_from_nested_xml(void)
 	LCUI_Widget w;
 
 	w = LCUIWidget_GetById("test-nested-1");
-	it_b("check test-nested-1 should exist", w, TRUE);
+	it_b("check test-nested-1 should exist", w != NULL, TRUE);
 	w = LCUIWidget_GetById("test-nested-2");
-	it_b("check test-nested-2 should exist", w, TRUE);
+	it_b("check test-nested-2 should exist", w != NULL, TRUE);
 	w = LCUIWidget_GetById("test-nested-3");
-	it_b("check test-nested-3 should exist", w, TRUE);
+	it_b("check test-nested-3 should exist", w != NULL, TRUE);
 	w = LCUIWidget_GetById("test-nested-4");
-	it_b("check test-nested-4 should exist", w, TRUE);
+	it_b("check test-nested-4 should exist", w != NULL, TRUE);
 }
 
 void test_xml_parser(void)
@@ -41,7 +41,7 @@ void test_xml_parser(void)
 	LCUI_Init();
 	LCUIDisplay_SetSize(960, 680);
 	root = LCUIWidget_GetRoot();
-	it_b("Load XML file", pack = LCUIBuilder_LoadFile("test_xml_parser.xml"), TRUE);
+	it_b("Load XML file", (pack = LCUIBuilder_LoadFile("test_xml_parser.xml")) != NULL, TRUE);
 	if (!pack) {
 		LCUI_Destroy();
 		return;

@@ -12,9 +12,9 @@ void test_strpool(void)
 	char *str1, *str2;
 	strpool_t *pool;
 
-	it_b("Check strpool_create()", pool = strpool_create(), TRUE);
-	it_b("Check strpool_alloc", str1 = strpool_alloc_str(pool, "hello"), TRUE);
-	it_b("Check strpool_alloc of already pooled string", str2 = strpool_alloc_str(pool, "hello"), TRUE);
+	it_b("Check strpool_create()", (pool = strpool_create()) != NULL, TRUE);
+	it_b("Check strpool_alloc", (str1 = strpool_alloc_str(pool, "hello")) != NULL, TRUE);
+	it_b("Check strpool_alloc of already pooled string", (str2 = strpool_alloc_str(pool, "hello")) != NULL, TRUE);
 	it_b("Check string reused", str1 == str2, TRUE);
 	it_b("Check strpool_size", strpool_size(pool) > 0, TRUE);
 	it_i("Check release str1", strpool_free_str(str1), 0);

@@ -71,7 +71,7 @@ void test_arial_font_load( void )
 	int id;
 	LCUI_Font font;
 	if( LCUIFont_LoadFile( "C:/windows/fonts/arial.ttf" ) != 0 ) {
-		return 0;
+		return;
 	}
 	it_i( "Load arialbd.ttf", LCUIFont_LoadFile( "C:/windows/fonts/arialbd.ttf" ), 0 );
 	it_i( "Load arialblk.ttf", LCUIFont_LoadFile( "C:/windows/fonts/ariblk.ttf" ), 0 );
