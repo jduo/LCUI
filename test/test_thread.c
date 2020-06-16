@@ -4,6 +4,7 @@
 #include <LCUI/LCUI.h>
 #include <LCUI/thread.h>
 #include "test.h"
+#include "libtest.h"
 
 typedef struct TestWorkerRec_ {
 	char data[32];
@@ -60,7 +61,7 @@ static void TestWorker_Destroy(TestWorker worker)
 	LCUICond_Destroy(&worker->cond);
 }
 
-int test_thread(void)
+void test_thread(void)
 {
 	int ret = 0;
 	TestWorkerRec worker;
@@ -81,7 +82,6 @@ int test_thread(void)
 	TestWorker_Send(&worker, "bye!");
 	LCUI_MSleep(100);
 	TestWorker_Destroy(&worker);
-	CHECK(worker.data_count == 7);
-	CHECK(!worker.active);
-	return ret;
+	it_i("Check worker data count", worker.data_count, 7);
+	it_b("Check worker is no longer active", worker.active, FALSE);
 }
