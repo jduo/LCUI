@@ -36,7 +36,8 @@ widget/sidebar.c	\
 widget/scrollbar.c	\
 widget/anchor.c		\
 widget/button.c		\
-widget/canvas.c
+widget/canvas.c   \
+widget/chart.c
 
 noinst_HEADERS =\
 widget_border.h		\

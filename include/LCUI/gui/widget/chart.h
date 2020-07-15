@@ -1,7 +1,7 @@
-﻿/*
- * widget.c -- GUI widget APIs.
+/*
+ * chart.h -- chart, used to display animated bar charts
  *
- * Copyright (c) 2018, Liu chao <lc-soft@live.cn> All rights reserved.
+ * Copyright (c) 2020, James Duong <duong.james@gmail.com> All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
  * modification, are permitted provided that the following conditions are met:
@@ -28,52 +28,13 @@
  * POSSIBILITY OF SUCH DAMAGE.
  */
 
+#ifndef LCUI_CHART_H
+#define LCUI_CHART_H
 
-#include <LCUI_Build.h>
-#include <LCUI/LCUI.h>
-#include <LCUI/gui/widget.h>
-#include <LCUI/gui/widget/canvas.h>
-#include <LCUI/gui/widget/chart.h>
-#include <LCUI/gui/widget/textview.h>
-#include <LCUI/gui/widget/textcaret.h>
-#include <LCUI/gui/widget/textedit.h>
-#include <LCUI/gui/widget/anchor.h>
-#include <LCUI/gui/widget/button.h>
-#include <LCUI/gui/widget/sidebar.h>
-#include <LCUI/gui/widget/scrollbar.h>
-#include "widget_background.h"
+LCUI_BEGIN_HEADER
 
-void LCUI_InitWidget(void)
-{
-	LCUIWidget_InitTasks();
-	LCUIWidget_InitEvent();
-	LCUIWidget_InitPrototype();
-	LCUIWidget_InitStyle();
-	LCUIWidget_InitRenderer();
-	LCUIWidget_InitImageLoader();
-	LCUIWidget_AddTextView();
-	LCUIWidget_AddCanvas();
-	LCUIWidget_AddChart();
-	LCUIWidget_AddAnchor();
-	LCUIWidget_AddButton();
-	LCUIWidget_AddSideBar();
-	LCUIWidget_AddTScrollBar();
-	LCUIWidget_AddTextCaret();
-	LCUIWidget_AddTextEdit();
-	LCUIWidget_InitBase();
-	LCUIWidget_InitIdLibrary();
-}
+void LCUIWidget_AddChart(void);
 
-void LCUI_FreeWidget(void)
-{
-	LCUIWidget_FreeTextView();
-	LCUIWidget_FreeTasks();
-	LCUIWidget_FreeRoot();
-	LCUIWidget_FreeEvent();
-	LCUIWidget_FreeStyle();
-	LCUIWidget_FreePrototype();
-	LCUIWidget_FreeRenderer();
-	LCUIWidget_FreeImageLoader();
-	LCUIWidget_FreeIdLibrary();
-	LCUIWidget_FreeBase();
-}
+LCUI_END_HEADER
+
+#endif
