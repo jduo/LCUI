@@ -27,8 +27,12 @@
  * POSSIBILITY OF SUCH DAMAGE.
  */
 
+#include <stdio.h>
+#include <stdlib.h>
 #include <string.h>
+#include <errno.h>
 #include <math.h>
+#include <LCUI_Build.h>
 #include <LCUI.h>
 #include <LCUI/timer.h>
 #include <LCUI/gui/metrics.h>
